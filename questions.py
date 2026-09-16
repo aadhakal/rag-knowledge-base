@@ -23,11 +23,40 @@ names a target of "4 of 5", and four of three is not a thing.
 
 QUESTIONS = [
     # {"question": "...", "expects": "..."},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
-    {"question": "", "expects": ""},
+
+    # guide_regional_transport.md (also guide_kestrelford.md, guide_walking.md)
+    # The date is stated outright in three separate documents, so retrieval has
+    # three chances to find it. This is the question that should always work.
+    {"question": "When did the railway line north of Brightwater close?",
+     "expects": "1963"},
+
+    # guide_halden_bay.md (also guide_eating.md)
+    # Both the town guide and the regional eating guide state the same price
+    # comparison. Tests which of two legitimate sources the system cites.
+    {"question": "Where is it cheaper to eat in Halden Bay than the harbour front?",
+     "expects": "Fell Street"},
+
+    # guide_marchwood.md, competing with guide_eating.md
+    # guide_eating.md says kitchens across the region stop serving at 9pm.
+    # Marchwood is the stated exception. Retrieval has to find the exception
+    # rather than the general rule, and the question uses none of the wording
+    # either document uses.
+    {"question": "Where can I eat late at night in this region?",
+     "expects": "Marchwood"},
+
+    # guide_pellew_sands.md
+    # One of two questions here whose answer appears in a single document (the
+    # other is the Halden Bay boats question). Nothing else in the corpus can
+    # cover for a retrieval miss.
+    {"question": "Are the seafront hotels in Pellew Sands quieter than the guesthouses?",
+     "expects": "noisier"},
+
+    # guide_halden_bay.md
+    # The fact sits under "What to see" rather than anywhere about food or
+    # opening times, so the question's wording points away from where the
+    # answer actually lives.
+    {"question": "What time do the boats land at Halden Bay?",
+     "expects": "6am"},
 ]
 
 # Questions from a different world entirely. Your gate should refuse all five.

@@ -22,9 +22,15 @@ pipeline earns credit; *"80% seemed reasonable"* does not.
 For at least 4 of my 5 test questions, the retrieved chunks include one that
 contains the answer.
 
-**Why this target:**
 <!-- e.g. "One of my questions is about a topic only two documents mention, so
      I expect that one to be hard." -->
+**Why this target:** One of my five is deliberately hard. "Where can I eat late
+at night in this region?" is answered in guide_marchwood.md, but guide_eating.md
+says kitchens across the region stop serving at 9pm, and my question doesn't use
+the wording from either file. So retrieval has to land on the exception and not
+the general rule. I expect that one to fail. The Pellew Sands hotel question is
+the other risk, since only guide_pellew_sands.md mentions the answer at all. 4 of 5 gives me room for the obvious failure. Asking for 5 of 5
+would mean assuming the hardest question I wrote works first time.
 
 ---
 
@@ -32,9 +38,14 @@ contains the answer.
 
 Every answer the system produces names at least one source document.
 
-**Why this target:**
 <!-- Why all five and not four? What about your setup makes that achievable —
      or what would have to go wrong for it not to be? -->
+**Why this target:** I want all five because anything less would mean the
+pipeline is broken, not that a question was hard. generate.py ends the prompt by
+telling the model to name the file it used, and every chunk arrives with its
+filename attached. The model is only called after the gate has passed, so there
+is always at least one real document in front of it. If an answer came back with
+no source, the problem would be structural and I'd want to know straight away.
 
 ---
 
@@ -49,13 +60,19 @@ in at least 4 of 5 tries.
      what happened into your run log. Swap them for your own if you'd rather —
      just keep five of them, or the "4 of 5" above has nothing to be 4 of. -->
 
-**Why this target:**
 <!-- What did your distances look like when you set the cutoff in Milestone 4?
      Was there a clean gap, or did the two groups overlap? -->
+**Why this target:** Mongolia, diesel engines, the World Cup, ibuprofen, Rust.
+None of that looks anything like a travel guide, so I'd expect all five to sit
+well away from my documents. What I don't know yet is where my own questions
+sit, and the cutoff has to go somewhere between the two. My nine town guides
+also repeat the same block about cash, phone signal and hospitals word for word,
+so a practical-sounding question could land closer than it deserves. That's the one
+I am worried about.
 
 ---
 
-## 4. Something about your chunks
+## 4. Chunks don't start or end mid-sentence
 
 <!-- YOU WRITE THIS ONE.
 
@@ -69,15 +86,17 @@ in at least 4 of 5 tries.
        - "No chunk is shorter than 200 characters, since anything below that
           in my corpus turned out to be a heading with no content under it." -->
 
+No chunk in my index begins or ends in the middle of a sentence.
 
-
-**Why this target:**
-
-
+**Why this target:** The chunker counts to 800 and cuts, wherever that lands. My
+documents are long enough that they have to be split somewhere, 1,400 to 2,500
+characters each. But my longest paragraph is only 451 characters, so there is
+always a paragraph break within reach before the window runs out. If a chunk
+ends mid-sentence that is the chunker's doing, not the text's.
 
 ---
 
-## 5. Your choice
+## 5. Sources are correct, not just present
 
 <!-- YOU WRITE THIS ONE TOO.
 
@@ -87,11 +106,15 @@ in at least 4 of 5 tries.
      present — anything, as long as it names a number or an observable
      outcome. -->
 
+Every document an answer cites actually contains the fact it is cited for.
 
-
-**Why this target:**
-
-
+**Why this target:** Criterion 2 only checks that a source got named. My corpus
+repeats itself a lot. The same bus times are in guide_kestrelford.md and
+guide_regional_transport.md, the same price comparison in guide_halden_bay.md and
+guide_eating.md. When retrieval hands the model several files that each cover part
+of an answer, crediting the wrong one is easy. A wrong source is worse than a missing one,
+because the source is the source of truth. There are only five answers, so I can open the
+files and check each one myself.
 
 ---
 
