@@ -20,8 +20,14 @@ your README has to name the function that produced your chunks.
 If you get stuck for 30 minutes, `fallback_split` is the original. Switch back
 to it, write down what you saw, and move on. That's a real observation about
 your pipeline, not giving up.
+
+Milestone 3 implementation (original starter instructions preserved above):
+Keep the city guides' sections and paragraphs intact. Repeat the
+guide title so a retrieved section still identifies the place it describes.
+`fallback_split` retains the original fixed-size approach for comparison.
 """
 
+import re
 from dataclasses import dataclass
 
 import config
@@ -96,8 +102,47 @@ def split_documents(documents: list[Document]) -> list[Chunk]:
       - Is the useful information in one sentence, or spread over a paragraph?
       - Would splitting on paragraph breaks keep more thoughts intact than
         splitting on a character count?
+
+    Milestone 3 implementation (original starter instructions preserved above):
+    Keep each Markdown section separate, including its title and heading.
+
+    Each section stays in one chunk, regardless of its length. The introduction
+    gets its own chunk. Body text has no overlap; the guide title is repeated
+    so each chunk identifies the place it describes. CHUNK_SIZE and
+    CHUNK_OVERLAP are used only by the original fallback_split function.
     """
-    return fallback_split(documents)
+    chunks: list[Chunk] = []
+    for doc in documents:
+        title = ""
+        text = doc.text  # load_documents has already applied clean_text.
+        if text.startswith("# "):
+            title, _, text = text.partition("\n")
+
+        pieces: list[str] = []
+        # The lookahead keeps each section heading with the text after it.
+        for section in re.split(r"(?m)(?=^#{2,6} )", text):
+            paragraphs = [p.strip() for p in section.split("\n\n") if p.strip()]
+            context = [title] if title else []
+            if paragraphs and re.match(r"^#{2,6} ", paragraphs[0]):
+                heading, _, first_paragraph = paragraphs.pop(0).partition("\n")
+                context.append(heading)
+                if first_paragraph.strip():
+                    paragraphs.insert(0, first_paragraph.strip())
+
+            if paragraphs:
+                pieces.append("\n\n".join(context + paragraphs))
+
+        for index, piece in enumerate(pieces):
+            chunks.append(
+                Chunk(
+                    text=piece,
+                    source=doc.source,
+                    index=index,
+                    produced_by="chunker.py::split_documents",
+                )
+            )
+
+    return chunks
 
 
 def describe(chunks: list[Chunk]) -> str:

@@ -27,6 +27,11 @@ CORPUS = os.getenv("AI201_CORPUS", "city_guides")
 # These are deliberately plain, generic numbers. Milestone 3 is where you
 # replace them with numbers that fit the documents you actually read.
 
+# Milestone 3 implementation:
+# split_documents keeps one section per chunk with no character limit and no
+# repeated body text. The settings below apply only to fallback_split, kept
+# at the original values so we can compare it with the new chunker.
+
 CHUNK_SIZE = 800        # characters per chunk
 CHUNK_OVERLAP = 120     # characters shared between neighbouring chunks
 
