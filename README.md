@@ -28,10 +28,18 @@
 
      Milestone 5. -->
 
+This project answers questions using the 14 documents in `city_guides`.
+You can ask about transport, food, places to stay, and other details covered by
+the guides. It finds matching sections, uses them to write an answer, and names
+the file the answer came from. If it can't find a close enough match, it says,
+"I don't have enough information about that."
+
 ## Chunking Strategy
 
-**Chunk size:**
-**Overlap:**
+**Chunk size:** Varies by section, with no character limit. The current chunks
+range from 174 to 762 characters, including the guide title and section heading.
+**Overlap:** 0. Paragraphs aren't repeated, but each chunk includes the guide's
+title so it's clear which place it describes.
 
 <!-- What about YOUR documents made you pick these numbers? Short posts and
      long sectioned guides don't want the same chunking, and "800 seemed
@@ -42,6 +50,31 @@
      more than pretending you got it right first time.
 
      Milestone 3. -->
+
+The city guides already have sections like "Getting there" and "Eat and drink."
+The original code ignored those headings and cut the text every 800 characters.
+In the Marchwood guide, one chunk ended with "The centre is walk" and the next
+started with "til midnight." That goes against my goal of keeping sentences whole.
+
+I changed `chunker.py::split_documents` to split at the headings. Each section
+stays together, and the introduction gets its own chunk. This keeps information
+about food separate from information about buses or places to stay.
+
+I first kept an 800-character target but let long paragraphs go over it. I then
+removed the size check so the rule is simple: keep each section whole. The
+largest current chunk is "Straightforward" in `guide_accessibility.md`, at 762
+characters with the guide title included. That's its measured length, not a
+limit. Longer sections would stay whole too.
+
+I changed overlap from 120 to 0 because the paragraphs now stay whole. Each
+chunk still repeats the guide title. For example, "Everything is on one street"
+makes more sense with "Givens Mill" above it. I still need to check whether zero
+overlap works well for questions that need information from two sections.
+
+The old code made 51 chunks. The new code makes 94, ranging from 174 to 762
+characters. Checks across all 14 guides showed that every paragraph was kept
+once, in the right order, with no sentences cut in half. I haven't tested yet
+whether this helps the system find better answers.
 
 ## Sample Chunks
 
@@ -54,29 +87,57 @@
 
      Milestone 3. -->
 
-**Chunk 1** — source: `` — produced by: ``
+These five chunks came from `python app.py chunks -n 5`. The first is just an
+introduction and doesn't answer a specific travel question. So even though the
+text stays whole, some chunks may be more useful than others.
+
+**Chunk 1** — source: `guide_accessibility.md#0` — produced by: `chunker.py::split_documents`
 
 ```
+# Getting around the region with limited mobility
+
+An honest assessment rather than a promotional one. Some of these places are
+difficult and it is better to know in advance.
 ```
 
-**Chunk 2** — source: `` — produced by: ``
+**Chunk 2** — source: `guide_corry_vale.md#5` — produced by: `chunker.py::split_documents`
 
 ```
+# Corry Vale
+
+## Where to stay
+
+Perhaps thirty beds in the entire valley, spread across two pubs and a handful of farmhouse rooms. In summer these are booked months ahead. Camping is permitted on two marked fields and nowhere else.
 ```
 
-**Chunk 3** — source: `` — produced by: ``
+**Chunk 3** — source: `guide_givens_mill.md#2` — produced by: `chunker.py::split_documents`
 
 ```
+# Givens Mill
+
+## Getting around
+
+Everything is on one street along the river. The mill is at one end and the church at the other, eight minutes apart. The riverside path continues in both directions for as far as you want to walk.
 ```
 
-**Chunk 4** — source: `` — produced by: ``
+**Chunk 4** — source: `guide_kestrelford.md#4` — produced by: `chunker.py::split_documents`
 
 ```
+# Kestrelford
+
+## What to see
+
+The market square on a Saturday morning is the main event and has run continuously since the 1400s. The parish church has a 13th-century tower you can climb for £2. The old trackbed walk runs six miles to the next village along an easy gradient and is the best half-day here.
 ```
 
-**Chunk 5** — source: `` — produced by: ``
+**Chunk 5** — source: `guide_pellew_sands.md#6` — produced by: `chunker.py::split_documents`
 
 ```
+# Pellew Sands
+
+## When to go
+
+June and September for the beach without the crowds. July and August are busy and the town is at its most itself, for better and worse. Winter is bleak, largely closed, and has a following among people who like that sort of thing.
 ```
 
 ## Sample Answer
@@ -84,14 +145,18 @@
 <!-- One complete question and answer, pasted as text, with the source line
      visible. Milestone 4. -->
 
-**Question:**
+**Question:** When did the railway line north of Brightwater close?
 
 **Answer:**
 
 ```
+(best distance 0.239, cutoff 0.65)
+The railway line north of Brightwater closed in 1963. This information comes from `guide_regional_transport.md`.
+Sources retrieved: guide_kestrelford.md, guide_marchwood.md, guide_regional_transport.md, guide_walking.md
+1 model calls this session, 730 tokens (702 in, 28 out)
 ```
 
-**My relevance cutoff:**
+**My relevance cutoff:** 0.65
 
 <!-- The number you set in config.py, and how you got there.
 
@@ -102,9 +167,34 @@
 
      Milestone 4. -->
 
+I ran `python measure_retrieval.py` with the five travel questions and five
+unrelated questions. It uses `store.py::search`, the same search function as
+`python app.py retrieve`, and retrieves five chunks for each question. The full
+results are saved in [retrieval_distances.json](results/retrieval_distances.json).
+
+The travel questions had distances from 0.222804 to 0.495222. The unrelated
+questions ranged from 0.802559 to 0.975347, so the two groups didn't overlap.
+The middle of the gap is about 0.64889. I rounded that to 0.65 and set it in
+`config.py`. A question passes when its best distance is below 0.65.
+
+This lets all five travel questions through and stops all five unrelated ones.
+The original cutoff of 0.6 also separates these ten questions. Choosing 0.65
+puts the cutoff near the middle of the gap; it doesn't show that the answers
+have improved. A question passing the gate still needs a correct answer from
+the retrieved text, and new questions may be harder to separate.
+
 | Question | In corpus? | Best distance |
 |---|---|---|
-|  |  |  |
+| When did the railway line north of Brightwater close? | Yes | 0.238950 |
+| Where is it cheaper to eat in Halden Bay than the harbour front? | Yes | 0.222804 |
+| Where can I eat late at night in this region? | Yes | 0.495222 |
+| Are the seafront hotels in Pellew Sands quieter than the guesthouses? | Yes | 0.281499 |
+| What time do the boats land at Halden Bay? | Yes | 0.281900 |
+| What is the capital of Mongolia? | No | 0.802559 |
+| How do I change the oil in a diesel engine? | No | 0.888096 |
+| Who won the 1994 World Cup? | No | 0.975347 |
+| What is the recommended dosage of ibuprofen for a headache? | No | 0.835036 |
+| How do I write a for loop in Rust? | No | 0.836491 |
 
 ## How I Used AI
 
@@ -117,9 +207,19 @@
 
      Milestone 5. -->
 
-**1.**
+**1. Asking questions and talking through the reasoning.** I went back and
+forth with AI about cleanup, overlap, long paragraphs, and the cutoff. One time
+I asked whether `clean_text` in `ingest.py` already did the work being added to
+`split_documents`. AI explained that `clean_text` fixes whitespace, while
+`split_documents` chooses where chunks start and end. It also found a repeated
+`.strip()` call on the whole document. After that discussion, we removed that
+call from the chunker and used the text that `ingest.py` had already cleaned.
 
-**2.**
+**2. Writing the split function.** I asked AI to help write `split_documents`
+for my city guides. Its first version used an 800-character target but allowed
+long paragraphs to go over it. I questioned the point of a limit the code could
+ignore. We changed it to keep each section in one chunk, with no character
+limit.
 
 <!-- ── Stretch features ─────────────────────────────────────────────────────
      Doing one? Say so here BEFORE you start. A feature this README never

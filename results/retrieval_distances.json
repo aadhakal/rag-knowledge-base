@@ -1,0 +1,430 @@
+{
+  "measured_at_utc": "2026-09-23T01:49:54.909933+00:00",
+  "corpus": "city_guides",
+  "embedding_model": "all-MiniLM-L6-v2",
+  "top_k": 5,
+  "threshold_before": 0.6,
+  "produced_by": "store.py::search",
+  "rows": [
+    {
+      "question": "When did the railway line north of Brightwater close?",
+      "in_corpus": true,
+      "best_distance": 0.23894959296616858,
+      "results": [
+        {
+          "text": "# Getting around the region\n\n## The railway\n\nThe line runs along the river valley, connecting Brightwater to the regional\nhub in 50 minutes. Eleven services a day on weekdays, six on Sundays. The line\nnorth of Brightwater closed in 1963 and everything beyond it is bus or car.\n\nTickets are cheaper booked the day before than on the day, and considerably\ncheaper than that booked a week ahead. There is no ticket office at\nBrightwater station outside weekday mornings; the machine on the platform takes\ncards only.",
+          "source": "guide_regional_transport.md",
+          "label": "guide_regional_transport.md#0",
+          "distance": 0.23894959296616858,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Kestrelford\n\n## Getting there\n\nNo railway station; the line was closed in 1963 and the trackbed is now a walking route. Buses run from Brightwater roughly hourly on weekdays, every two hours on Saturdays, and not at all on Sundays. Driving takes 55 minutes and the last eight are on a single-track road with passing places.",
+          "source": "guide_kestrelford.md",
+          "label": "guide_kestrelford.md#1",
+          "distance": 0.3239074383957292,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Walking in the region\n\n## Easy, on good surfaces\n\nThe **Brightwater river path** runs four miles upstream from the town to a weir,\non a made surface, flat throughout. It is the most-walked route in the region\nand deservedly so. Continuing downstream from Givens Mill reaches Brightwater in\nabout three hours.\n\nThe **Kestrelford trackbed** follows the railway line closed in 1963 for six\nmiles to the next village. Easy gradient, good surface, and the best walking in\nthe region for the effort involved.\n\n**Thornby Wells** has flat, formal gardens and level streets — the region's\nmost accessible town on foot.",
+          "source": "guide_walking.md",
+          "label": "guide_walking.md#0",
+          "distance": 0.34026333156551836,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Getting around the region\n\n## Walking and cycling\n\nThe river path from Brightwater runs four miles upstream on a good surface. The\nold railway trackbed from Kestrelford runs six miles on an easy gradient and is\nthe best walking in the region for the effort involved. The coastal path from\nHalden Bay is more serious — exposed, and closed in high wind.\n\nCycling is pleasant on the river path and the trackbed, and unpleasant on Mill\nRoad and the coast road, neither of which has a shoulder.",
+          "source": "guide_regional_transport.md",
+          "label": "guide_regional_transport.md#3",
+          "distance": 0.41837735058674885,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Marchwood\n\n## Getting there\n\nEvery railway line in the region meets here, which is the city's defining feature. Trains to Brightwater run every 40 minutes until 11pm. The airport is 20 minutes out by a dedicated bus that runs every 15 minutes and costs more than the equivalent taxi shared between three people.",
+          "source": "guide_marchwood.md",
+          "label": "guide_marchwood.md#1",
+          "distance": 0.44834811697387045,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "Where is it cheaper to eat in Halden Bay than the harbour front?",
+      "in_corpus": true,
+      "best_distance": 0.22280361855427433,
+      "results": [
+        {
+          "text": "# Halden Bay\n\n## Eat and drink\n\nSeafood, unsurprisingly, and it is genuinely fresh — the boats land in the early morning and the two harbour restaurants buy directly. Prices on the harbour front are roughly double those on Fell Street, one level up, for comparable food. Everything closes by 9pm and much of it closes entirely from November to February.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#3",
+          "distance": 0.22280361855427433,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Eating across the region\n\n## The pattern worth knowing\n\nAlmost everywhere in this region, the good cooking is one street back from\nwherever the visitors are. Brightwater's riverside strip is priced for people\nwho walked there from the hotels; Corry Lane, two streets inland, serves\ncomparable food for about a third less. Halden Bay's harbour front is roughly\ndouble Fell Street, one level up. Pellew Sands's seafront is chips and ice\ncream, and Marine Terrace behind it is where the actual restaurants are.\n\nMarchwood is the exception, in that the good district — Northgate — is a tram\nride away rather than a street away, and the station area is uniformly poor.",
+          "source": "guide_eating.md",
+          "label": "guide_eating.md#0",
+          "distance": 0.2859595535726054,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Eating across the region\n\n## Local specifics\n\nHalden Bay's seafood is genuinely fresh — the two harbour restaurants buy\ndirectly from boats that land in the early morning. Givens Mill's tearoom sells\nbread made from flour ground twenty metres away. Kestrelford's bakery sells out\nby 11am and is the reason a lot of people return. Thornby Wells does Sunday\nlunch as a local institution and it needs booking a week ahead.",
+          "source": "guide_eating.md",
+          "label": "guide_eating.md#3",
+          "distance": 0.29332800693730354,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Halden Bay\n\n## Where to stay\n\nAlmost entirely holiday lets rather than hotels, which means minimum stays of two or three nights in summer. There is one inn on the harbour. Prices roughly halve outside July and August.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#5",
+          "distance": 0.3387960434401648,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Halden Bay\n\n## Getting around\n\nThe town is small enough to cross in fifteen minutes but is built on three levels connected by stepped lanes, which makes it hard going with luggage or a pushchair. The harbour front is level; everything above it is not.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#2",
+          "distance": 0.3520007865609208,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "Where can I eat late at night in this region?",
+      "in_corpus": true,
+      "best_distance": 0.495221653851047,
+      "results": [
+        {
+          "text": "# Corry Vale\n\n## Eat and drink\n\nOne pub in the largest village serves food seven days a week. A second, in the third village, opens Thursday to Sunday. There is a farm shop at the valley mouth that sells bread, cheese and little else, and it closes at 4pm. Bring supplies; this is not a place with options.",
+          "source": "guide_corry_vale.md",
+          "label": "guide_corry_vale.md#3",
+          "distance": 0.495221653851047,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Eating across the region\n\n## Opening hours\n\nThis catches visitors out more than anything else. Outside Marchwood, kitchens\nacross the region stop serving at 9pm and often earlier. Kestrelford's pubs\nserve 12 to 2 and 6 to 8:30 and there is nowhere to eat at all outside those\nwindows. Elder Ness has one pub, closed Mondays.\n\nSunday evening is the hardest meal to find anywhere except Marchwood and\nThornby Wells.",
+          "source": "guide_eating.md",
+          "label": "guide_eating.md#1",
+          "distance": 0.520584910596247,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Pellew Sands\n\n## Eat and drink\n\nThe seafront is chips and ice cream, done well and without pretence. The better cooking is on Marine Terrace, one street back, where four or five places are genuinely good and roughly half the seafront price. Sunday evening is difficult — most kitchens close.",
+          "source": "guide_pellew_sands.md",
+          "label": "guide_pellew_sands.md#3",
+          "distance": 0.5271374283463104,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Brightwater\n\n## Eat and drink\n\nThe riverside strip has six or seven places aimed squarely at visitors and priced accordingly. Two streets back, on Corry Lane, the same food costs about a third less. The Tuesday market sets up in the square from 7am and is finished by 1pm. Most kitchens in town stop serving at 9pm, earlier than visitors expect, and on Sundays many close entirely.",
+          "source": "guide_brightwater.md",
+          "label": "guide_brightwater.md#3",
+          "distance": 0.5412758911567793,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Eating across the region\n\n## Local specifics\n\nHalden Bay's seafood is genuinely fresh — the two harbour restaurants buy\ndirectly from boats that land in the early morning. Givens Mill's tearoom sells\nbread made from flour ground twenty metres away. Kestrelford's bakery sells out\nby 11am and is the reason a lot of people return. Thornby Wells does Sunday\nlunch as a local institution and it needs booking a week ahead.",
+          "source": "guide_eating.md",
+          "label": "guide_eating.md#3",
+          "distance": 0.5428516051277494,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "Are the seafront hotels in Pellew Sands quieter than the guesthouses?",
+      "in_corpus": true,
+      "best_distance": 0.2814985307629453,
+      "results": [
+        {
+          "text": "# Pellew Sands\n\n## Where to stay\n\nA great deal of accommodation, most of it dating from the resort's first period and varying wildly in how well it has been maintained. Prices are low outside July and August. The seafront hotels are noisier than the Marine Terrace guesthouses.",
+          "source": "guide_pellew_sands.md",
+          "label": "guide_pellew_sands.md#5",
+          "distance": 0.2814985307629453,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Pellew Sands\n\n## Eat and drink\n\nThe seafront is chips and ice cream, done well and without pretence. The better cooking is on Marine Terrace, one street back, where four or five places are genuinely good and roughly half the seafront price. Sunday evening is difficult — most kitchens close.",
+          "source": "guide_pellew_sands.md",
+          "label": "guide_pellew_sands.md#3",
+          "distance": 0.43305606295952803,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Pellew Sands\n\nPellew Sands is a Victorian seaside resort that has been through three distinct lives: fashionable, then neglected, and now something in between. The architecture is from the first period and much of the infrastructure from the second.",
+          "source": "guide_pellew_sands.md",
+          "label": "guide_pellew_sands.md#0",
+          "distance": 0.4503059789799425,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Pellew Sands\n\n## What to see\n\nThe pier is 1890s, was partly destroyed by fire in 1978, and the surviving half is open and free. The municipal gardens behind the seafront are better than they sound. The beach is two miles of hard sand and is genuinely excellent at low tide and unremarkable at high.",
+          "source": "guide_pellew_sands.md",
+          "label": "guide_pellew_sands.md#4",
+          "distance": 0.4663889458805289,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Eating across the region\n\n## The pattern worth knowing\n\nAlmost everywhere in this region, the good cooking is one street back from\nwherever the visitors are. Brightwater's riverside strip is priced for people\nwho walked there from the hotels; Corry Lane, two streets inland, serves\ncomparable food for about a third less. Halden Bay's harbour front is roughly\ndouble Fell Street, one level up. Pellew Sands's seafront is chips and ice\ncream, and Marine Terrace behind it is where the actual restaurants are.\n\nMarchwood is the exception, in that the good district — Northgate — is a tram\nride away rather than a street away, and the station area is uniformly poor.",
+          "source": "guide_eating.md",
+          "label": "guide_eating.md#0",
+          "distance": 0.5445304641567369,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "What time do the boats land at Halden Bay?",
+      "in_corpus": true,
+      "best_distance": 0.28189971279819315,
+      "results": [
+        {
+          "text": "# Halden Bay\n\n## What to see\n\nThe harbour at 6am when the boats come in is the thing worth setting an alarm for. The coastal path runs in both directions, north to a lighthouse in about two hours and south along the cliffs for as far as you want. The small museum on Fell Street covers the fishing industry and takes 40 minutes.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#4",
+          "distance": 0.28189971279819315,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Halden Bay\n\n## Eat and drink\n\nSeafood, unsurprisingly, and it is genuinely fresh — the boats land in the early morning and the two harbour restaurants buy directly. Prices on the harbour front are roughly double those on Fell Street, one level up, for comparable food. Everything closes by 9pm and much of it closes entirely from November to February.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#3",
+          "distance": 0.36654229615420963,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Halden Bay\n\n## Getting there\n\nThe coast road is the only approach and it is slow — 40 minutes for 22 miles, with the last stretch cut into the cliff. Buses run four times a day. Parking in the town itself is limited to two small lots that fill by 10am on summer weekends; the overflow lot is a 12-minute walk up a hill.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#1",
+          "distance": 0.3862786504943755,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Halden Bay\n\n## Getting around\n\nThe town is small enough to cross in fifteen minutes but is built on three levels connected by stepped lanes, which makes it hard going with luggage or a pushchair. The harbour front is level; everything above it is not.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#2",
+          "distance": 0.39048480166592436,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Getting around the region\n\n## Driving\n\nRoads are good between the towns and poor on the approaches to both Kestrelford\nand Halden Bay. The Kestrelford approach is single-track with passing places\nfor the final eight minutes. The Halden Bay coast road is cut into the cliff\nand is slow rather than difficult.\n\nParking is the constraint rather than driving. Both Halden Bay lots fill by\n10am on summer weekends. Kestrelford's lower car park is free and involves a\nsteep walk up.",
+          "source": "guide_regional_transport.md",
+          "label": "guide_regional_transport.md#2",
+          "distance": 0.4256776159798876,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "What is the capital of Mongolia?",
+      "in_corpus": false,
+      "best_distance": 0.8025589522949964,
+      "results": [
+        {
+          "text": "# Corry Vale\n\nCorry Vale is not a town but a valley containing four villages strung along eleven miles of road. Visitors treat it as one destination and locals emphatically do not. The largest village has 900 people and the smallest has 140.",
+          "source": "guide_corry_vale.md",
+          "label": "guide_corry_vale.md#0",
+          "distance": 0.8025589522949964,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Getting around the region with limited mobility\n\nAn honest assessment rather than a promotional one. Some of these places are\ndifficult and it is better to know in advance.",
+          "source": "guide_accessibility.md",
+          "label": "guide_accessibility.md#0",
+          "distance": 0.828447850301951,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Halden Bay\n\n## Getting around\n\nThe town is small enough to cross in fifteen minutes but is built on three levels connected by stepped lanes, which makes it hard going with luggage or a pushchair. The harbour front is level; everything above it is not.",
+          "source": "guide_halden_bay.md",
+          "label": "guide_halden_bay.md#2",
+          "distance": 0.8463395556869899,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Givens Mill\n\nGivens Mill is a village of 700 built around a working watermill that still grinds flour commercially. It is the sort of place people visit for an afternoon and then talk about for longer than the visit lasted.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#0",
+          "distance": 0.8574717009843353,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Corry Vale\n\n## Getting around\n\nNothing within the valley is walkable from anything else — the villages are two to four miles apart. There is one taxi, based in the largest village, and it must be booked a day ahead. Most visitors drive between villages and walk the footpaths in between.",
+          "source": "guide_corry_vale.md",
+          "label": "guide_corry_vale.md#2",
+          "distance": 0.8690124470258066,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "How do I change the oil in a diesel engine?",
+      "in_corpus": false,
+      "best_distance": 0.8880964093170712,
+      "results": [
+        {
+          "text": "# Brightwater\n\n## Getting there\n\nThe train runs to the regional hub eleven times a day on weekdays and six times on Sundays, taking 50 minutes. The station is a 15-minute walk from campus, or the shuttle meets the four busiest arrivals. Long-distance coaches stop on Verrill Street rather than at the station, which catches people out. There is no airport; the nearest is 90 minutes by road.",
+          "source": "guide_brightwater.md",
+          "label": "guide_brightwater.md#1",
+          "distance": 0.8880964093170712,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Givens Mill\n\n## Getting there\n\nNo station and no bus on Sundays; four buses a day from Brightwater on weekdays, taking 30 minutes. Driving is 20 minutes. The village car park holds about forty cars and is full by 11am on summer Saturdays.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#1",
+          "distance": 0.8982548298205892,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Getting around the region with limited mobility\n\n## Difficult\n\n**Kestrelford** is built on a slope and the walk up from the lower car park is\nsteeper than it looks on a map. There is no transport within the town.\n\n**Halden Bay** is built on three levels connected by stepped lanes. The harbour\nfront is level; everything above it is not. This is hard going with luggage or a\npushchair, let alone a wheelchair.\n\n**Corry Vale** has no public transport, villages two to four miles apart, and\nfootpaths rather than pavements. **Elder Ness** is shingle and a single street.",
+          "source": "guide_accessibility.md",
+          "label": "guide_accessibility.md#3",
+          "distance": 0.9184315117433013,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Walking in the region\n\n## Easy, on good surfaces\n\nThe **Brightwater river path** runs four miles upstream from the town to a weir,\non a made surface, flat throughout. It is the most-walked route in the region\nand deservedly so. Continuing downstream from Givens Mill reaches Brightwater in\nabout three hours.\n\nThe **Kestrelford trackbed** follows the railway line closed in 1963 for six\nmiles to the next village. Easy gradient, good surface, and the best walking in\nthe region for the effort involved.\n\n**Thornby Wells** has flat, formal gardens and level streets — the region's\nmost accessible town on foot.",
+          "source": "guide_walking.md",
+          "label": "guide_walking.md#0",
+          "distance": 0.9190199216756993,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Givens Mill\n\n## What to see\n\nThe mill runs tours on the hour from 11 to 3 and the machinery is operating during them, which is loud and much more impressive than a static exhibit. The church has a Saxon doorway. The river walk downstream reaches Brightwater in about three hours.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#4",
+          "distance": 0.9238208197531742,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "Who won the 1994 World Cup?",
+      "in_corpus": false,
+      "best_distance": 0.9753467060856605,
+      "results": [
+        {
+          "text": "# Givens Mill\n\nGivens Mill is a village of 700 built around a working watermill that still grinds flour commercially. It is the sort of place people visit for an afternoon and then talk about for longer than the visit lasted.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#0",
+          "distance": 0.9753467060856605,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Thornby Wells\n\n## When to go\n\nYear-round, genuinely. The gardens are best in May and June. The concert season runs September to April, which makes this the region's most reliable winter destination after Marchwood.",
+          "source": "guide_thornby_wells.md",
+          "label": "guide_thornby_wells.md#6",
+          "distance": 0.9968272775013027,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Getting around the region with limited mobility\n\nAn honest assessment rather than a promotional one. Some of these places are\ndifficult and it is better to know in advance.",
+          "source": "guide_accessibility.md",
+          "label": "guide_accessibility.md#0",
+          "distance": 0.9999498533352974,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Brightwater\n\nBrightwater is a river town of about 40,000 people, roughly doubling in term time. It grew around a mill that closed in 1974 and spent twenty years working out what to be instead. The answer turned out to be the university.",
+          "source": "guide_brightwater.md",
+          "label": "guide_brightwater.md#0",
+          "distance": 1.0051366156077464,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Thornby Wells\n\nThornby Wells was a spa town for about ninety years and has spent the century since being a comfortable small town of 6,000 that happens to have unusually grand architecture for its size.",
+          "source": "guide_thornby_wells.md",
+          "label": "guide_thornby_wells.md#0",
+          "distance": 1.011279498233244,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "What is the recommended dosage of ibuprofen for a headache?",
+      "in_corpus": false,
+      "best_distance": 0.8350359513798078,
+      "results": [
+        {
+          "text": "# Givens Mill\n\n## Eat and drink\n\nA tearoom attached to the mill, open 10 to 4 daily except Tuesdays, which sells bread made from the flour ground twenty metres away and is the reason most people come. One pub, food served lunchtimes and Thursday to Saturday evenings.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#3",
+          "distance": 0.8350359513798078,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Thornby Wells\n\n## Where to stay\n\nTwo large hotels from the spa period, both faded in a way some people find charming, and several small guesthouses. Prices are moderate and stable year-round.",
+          "source": "guide_thornby_wells.md",
+          "label": "guide_thornby_wells.md#5",
+          "distance": 0.8420202963109344,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Elder Ness\n\n## Getting around\n\nOn foot. The village is one street. The lighthouse is a 25-minute walk along the shingle, which is harder going than the distance suggests. There is one car park at the village and parking anywhere else on the headland is prohibited and enforced.",
+          "source": "guide_elder_ness.md",
+          "label": "guide_elder_ness.md#2",
+          "distance": 0.8524219561389472,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Walking in the region\n\n## Moderate, with hills\n\nThe **Corry Vale circuit** takes in three of the four villages, about nine miles\nwith 500 metres of ascent. The footpath network in the valley is dense and well\nmarked. Several paths become genuinely boggy rather than merely wet outside May\nto September.\n\n**Givens Mill** to Brightwater along the river is three hours one way, easy\nunderfoot, and the return needs a weekday bus.",
+          "source": "guide_walking.md",
+          "label": "guide_walking.md#1",
+          "distance": 0.8547874428333071,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Elder Ness\n\n## Getting there\n\nA single road in, which floods at the highest spring tides roughly six times a year for about two hours either side of high water. Tide tables are posted at the turning and are worth reading. No public transport of any kind. Nearest station is Pellew Sands, 40 minutes by road.",
+          "source": "guide_elder_ness.md",
+          "label": "guide_elder_ness.md#1",
+          "distance": 0.8617333434078834,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    },
+    {
+      "question": "How do I write a for loop in Rust?",
+      "in_corpus": false,
+      "best_distance": 0.8364911499708944,
+      "results": [
+        {
+          "text": "# Givens Mill\n\n## Getting around\n\nEverything is on one street along the river. The mill is at one end and the church at the other, eight minutes apart. The riverside path continues in both directions for as far as you want to walk.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#2",
+          "distance": 0.8364911499708944,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Givens Mill\n\nGivens Mill is a village of 700 built around a working watermill that still grinds flour commercially. It is the sort of place people visit for an afternoon and then talk about for longer than the visit lasted.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#0",
+          "distance": 0.8378490903263485,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Corry Vale\n\n## Where to stay\n\nPerhaps thirty beds in the entire valley, spread across two pubs and a handful of farmhouse rooms. In summer these are booked months ahead. Camping is permitted on two marked fields and nowhere else.",
+          "source": "guide_corry_vale.md",
+          "label": "guide_corry_vale.md#5",
+          "distance": 0.839922612133598,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Thornby Wells\n\nThornby Wells was a spa town for about ninety years and has spent the century since being a comfortable small town of 6,000 that happens to have unusually grand architecture for its size.",
+          "source": "guide_thornby_wells.md",
+          "label": "guide_thornby_wells.md#0",
+          "distance": 0.847527664842929,
+          "produced_by": "chunker.py::split_documents"
+        },
+        {
+          "text": "# Givens Mill\n\n## Where to stay\n\nNothing in the village itself. The nearest rooms are in Brightwater, which is close enough that this is not really a problem — most people come for a half day.",
+          "source": "guide_givens_mill.md",
+          "label": "guide_givens_mill.md#5",
+          "distance": 0.8503783912105811,
+          "produced_by": "chunker.py::split_documents"
+        }
+      ]
+    }
+  ]
+}
