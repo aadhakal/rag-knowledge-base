@@ -9,8 +9,7 @@
 > Leave that file alone.
 >
 > **Paste everything as text.** No screenshots, no video. A typed table gets
-> full credit; a picture of the same table gets none, because the grader can't
-> read it.
+> full credit; a picture of the same table gets none.
 >
 > Delete these instruction blocks as you replace them. The `<!-- -->` comments
 > are notes to you and don't show up when the page renders — you can leave them
@@ -18,7 +17,7 @@
 
 ---
 
-# Week 1
+# Unit 1
 
 ## What This Does
 
@@ -228,10 +227,10 @@ limit.
 
 ---
 
-# Week 2
+# Unit 2
 
 <!-- These sections get ADDED to what's already above. Don't delete or rewrite
-     week 1 — the point is that someone can see what you said before you knew
+     unit 1 — the point is that someone can see what you said before you knew
      how it went. -->
 
 ## Run Log — Before
@@ -261,7 +260,7 @@ limit.
 ## Verdicts
 
 <!-- MET or MISSED for each of the five, against the target you wrote last
-     week — not a new one. Plus a sentence on how you decided. That sentence
+     unit — not a new one. Plus a sentence on how you decided. That sentence
      matters most where it was close.
 
      If your target said 4 of 5 and your runs came out 4, 3, 4, that's a MISS.
