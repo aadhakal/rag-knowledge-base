@@ -32,7 +32,29 @@ the general rule. I expect that one to fail. The Pellew Sands hotel question is
 the other risk, since only guide_pellew_sands.md mentions the answer at all. 4 of 5 gives me room for the obvious failure. Asking for 5 of 5
 would mean assuming the hardest question I wrote works first time.
 
----
+> **Revised in week 2:** Split into two criteria. (1a) For at least 4 of my 5
+> test questions, the retrieved chunks include one that contains the answer.
+> (1b) For at least 4 of my 5 test questions, the answer states the specific
+> fact the question asked for.
+>
+> **Why revised:** Not because I missed the target — I hit it at 5 of 5. The
+> criterion is broken because it cannot fail on the failure I actually have.
+> My boats question is wrong in all three runs: the answer says "the boats land
+> in the early morning" when guide_halden_bay.md says "the harbour at 6am". The
+> chunk holding 6am is retrieved at **rank 1** and is in the prompt, so 1a
+> passes while the answer is wrong. Criterion 5 passes too, because the cited
+> document genuinely contains 6am — the answer just doesn't use it.
+>
+> Between "the right chunk was retrieved" and "the citation is honest" I never
+> wrote anything asking whether the answer was right, so a question that fails
+> every single run costs me nothing across all five criteria. 1b is the
+> measurement that was missing.
+>
+> Under 1b my current system scores **4, 3, 4** across the three runs — the
+> boats question fails every time, and the Marchwood question fails once. A
+> target has to hold rather than show up occasionally, so that is a MISS, and
+> it is a miss I could not see at all under the criterion as I originally
+> wrote it.
 
 ## 2. Every answer names a source
 
